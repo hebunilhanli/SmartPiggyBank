@@ -5,4 +5,13 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_sign_up">SignUp</string>
+
+
+    <string name="app_name1">QrCodeCamera</string>
+    <string name="result_text_default">Please scan your QR code. </string>
+    <string name="title_activity_sign_up2_fragment">SignUp2Fragment</string>
+    <string name="title_activity_main_screen_fragment">MainScreenFragment</string>
+    <string name="title_activity_transaction_fragment">TransactionFragment</string>
+
 </resources>

@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "173266100289",
+    "firebase_url": "https://piggybank-2f8b0.firebaseio.com",
+    "project_id": "piggybank-2f8b0",
+    "storage_bucket": "piggybank-2f8b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173266100289:android:ae6c8b275b7ae04f",
+        "android_client_info": {
+          "package_name": "com.example.hebun.piggybank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "173266100289-tgifh4dk53shrm94q3dqtortnd9tucea.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hebun.piggybank",
+            "certificate_hash": "9715980acf02f243fafa16da6cfe7f5cf3d8cd75"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxMxuBM-ljVA1sPBU--uWgefd8CRwjpyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "173266100289-kafg3uqd6hu7kobqes8he0fopgpptm8u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

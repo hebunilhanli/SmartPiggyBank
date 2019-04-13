@@ -1,44 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginframe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorAccent"
-    tools:context=".LoginScreenFragment">
-
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/piggy"
-        android:layout_width="wrap_content"
-        android:layout_height="128dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/piggy"
-        android:transitionName="imageTransation" />
-
-    <EditText
-        android:id="@+id/editText6"
-        android:layout_width="260dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-
-        android:layout_marginTop="50dp"
-        android:background="@drawable/id"
-        android:ems="10"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="260dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="250dp"
-        android:layout_marginVertical="25dp"
-        android:background="@drawable/password"
-        android:ems="10"
-        android:inputType="textPassword" />
+    tools:context=".Fragments.LoginScreenFragment">
 
 
-</LinearLayout>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        >
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/piggy"
+            android:layout_width="wrap_content"
+            android:layout_height="171dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/piggy"
+            android:transitionName="imageTransation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/loginEmail"
+            android:layout_width="281dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginVertical="30dp"
+            android:background="@drawable/emailinput"
+            android:ems="10"
+            android:fontFamily="@font/coustard"
+            android:hint="ID"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="65dp"
+            android:text="hebun.ilhanli@gmail.com"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/signInPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/piggy"
+            app:layout_constraintVertical_bias="0.685" />
+
+        <EditText
+            android:id="@+id/signInPassword"
+            android:layout_width="286dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="172dp"
+            android:background="@drawable/passwordinput"
+            android:ems="10"
+            android:fontFamily="@font/coustard"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="65dp"
+            android:text="789456123"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/loginButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <io.ghyeok.stickyswitch.widget.StickySwitch
+            android:id="@+id/rememberSwitch"
+            android:layout_width="83dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="224dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signInPassword"
+            app:layout_constraintVertical_bias="0.515"
+            app:ss_iconPadding="15dp"
+            app:ss_iconSize="1dp"
+            app:ss_sliderBackgroundColor="@color/transo"
+            app:ss_switchColor="#2a632b" />
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="159dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"
+            android:layout_marginVertical="60dp"
+            android:background="@drawable/loginbutton"
+            android:fontFamily="@font/raleway_light"
+            android:text="LOGIN"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+
+            android:background="#5dbd5e"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/raleway_light"
+                android:text="Don't have an account? "
+                android:textAlignment="textEnd"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/signUpButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/raleway_bold"
+                android:text="Sign Up."
+                android:textAlignment="textStart"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</FrameLayout>

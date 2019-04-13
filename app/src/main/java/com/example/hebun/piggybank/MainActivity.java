@@ -9,6 +9,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.example.hebun.piggybank.Fragments.LoginScreenFragment;
+
 import pl.droidsonroids.gif.GifImageView;
 
 
