@@ -12,8 +12,23 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        >
+        android:layout_gravity="bottom">
+
+        <TextView
+            android:id="@+id/forgetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/raleway_medium"
+            android:text="Forgot Password ?"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
         <pl.droidsonroids.gif.GifImageView
             android:id="@+id/piggy"
@@ -33,83 +48,88 @@
 
         <EditText
             android:id="@+id/loginEmail"
-            android:layout_width="281dp"
-            android:layout_height="39dp"
+            android:layout_width="288dp"
+            android:layout_height="43dp"
             android:layout_gravity="center"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginVertical="30dp"
             android:background="@drawable/emailinput"
             android:ems="10"
-            android:fontFamily="@font/coustard"
+            android:fontFamily="@font/raleway_medium"
             android:hint="ID"
             android:inputType="textEmailAddress"
             android:paddingLeft="65dp"
             android:text="hebun.ilhanli@gmail.com"
             android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
+            android:textColorLink="@color/colorPrimaryDark"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/signInPassword"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/piggy"
-            app:layout_constraintVertical_bias="0.685" />
+            app:layout_constraintVertical_bias="0.75" />
 
         <EditText
             android:id="@+id/signInPassword"
             android:layout_width="286dp"
-            android:layout_height="35dp"
+            android:layout_height="42dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="172dp"
+            android:layout_marginBottom="132dp"
             android:background="@drawable/passwordinput"
             android:ems="10"
-            android:fontFamily="@font/coustard"
+            android:fontFamily="@font/raleway_medium"
             android:hint="Password"
             android:inputType="textPassword"
             android:paddingLeft="65dp"
             android:text="789456123"
             android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
+            android:textColorLink="@color/colorPrimaryDark"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/loginButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <io.ghyeok.stickyswitch.widget.StickySwitch
-            android:id="@+id/rememberSwitch"
-            android:layout_width="83dp"
-            android:layout_height="35dp"
-            android:layout_marginBottom="224dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signInPassword"
-            app:layout_constraintVertical_bias="0.515"
-            app:ss_iconPadding="15dp"
-            app:ss_iconSize="1dp"
-            app:ss_sliderBackgroundColor="@color/transo"
-            app:ss_switchColor="#2a632b" />
 
         <Button
             android:id="@+id/loginButton"
-            android:layout_width="159dp"
-            android:layout_height="47dp"
+            android:layout_width="154dp"
+            android:layout_height="52dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
             android:layout_marginVertical="60dp"
             android:background="@drawable/loginbutton"
             android:fontFamily="@font/raleway_light"
             android:text="LOGIN"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.774" />
+
+        <io.ghyeok.stickyswitch.widget.StickySwitch
+            android:id="@+id/rememberSwitch"
+            android:layout_width="88dp"
+            android:layout_height="43dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.257"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/signInPassword"
+            app:layout_constraintVertical_bias="0.284"
+            app:ss_iconPadding="1dp"
+            app:ss_sliderBackgroundColor="@color/transo"
+            app:ss_switchColor="@color/colorPrimaryDark" />
 
 
         <LinearLayout
@@ -144,6 +164,26 @@
                 android:textAlignment="textStart"
                 android:textSize="18sp" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="174dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/raleway_medium"
+            android:text="Remember Me"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/loginButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/rememberSwitch"
+            app:layout_constraintTop_toBottomOf="@+id/signInPassword"
+            app:layout_constraintVertical_bias="0.606" />
+
 
     </android.support.constraint.ConstraintLayout>
 

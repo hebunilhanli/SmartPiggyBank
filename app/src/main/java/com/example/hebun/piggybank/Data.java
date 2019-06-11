@@ -1,31 +1,42 @@
 package com.example.hebun.piggybank;
 
+import android.widget.ImageView;
+import android.widget.TextView;
+
 public class Data {
-    private int imageID;
-    private String string;
 
-    public Data(){
+    public String dateCount, month, money;
 
-    }
-    public Data(int imageID, String string){
-        this.imageID = imageID;
-        this.string = string;
+    public Data(String dateCount, String month, String money) {
+        this.dateCount = dateCount;
+        this.month = month;
+        this.money = money;
     }
 
-    public int getImageID() {
-        return imageID;
+    public Data() {
     }
 
-    public String getString() {
-        return string;
+    public String getDateCount() {
+        return dateCount;
     }
 
-    public void setImageID(int imageID) {
-        this.imageID = imageID;
+    public void setDateCount(String dateCount) {
+        this.dateCount = dateCount;
     }
 
-    public void setString(String string) {
-        this.string = string;
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public String getMoney() {
+        return money;
+    }
+
+    public void setMoney(String money) {
+        this.money = money;
     }
 }
-

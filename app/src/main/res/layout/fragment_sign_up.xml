@@ -94,7 +94,7 @@
             android:layout_marginTop="8dp"
             android:fontFamily="@font/raleway_bold"
             android:gravity="center_horizontal"
-            android:text="@string/result_text_default"
+            android:text="Please scan your QR Code"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
             app:layout_constraintBottom_toTopOf="@+id/qrbutton"

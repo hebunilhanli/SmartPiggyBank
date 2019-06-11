@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hebun.piggybank.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -59,13 +60,14 @@ public class SignUp2FragmentFragment extends Fragment {
     Button signsUp;
 
 
+
     public SignUp2FragmentFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_sign_up2_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_sign_up2, container, false);
 
         piggyIDs = view.findViewById(R.id.BankIDs);
         name = view.findViewById(R.id.fullName);
@@ -116,67 +118,74 @@ public class SignUp2FragmentFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-
-                mAuth.createUserWithEmailAndPassword(email.getText().toString(),passwords.getText().toString())
-                        .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-
-                            final FirebaseUser userNew = mAuth.getCurrentUser();
-
-
-                            UUID uuidImage = UUID.randomUUID();
-                            String profilepicture = "profilepic/" + uuidImage +".png";
-                            StorageReference storageReference = fbStorageRef.child(profilepicture);
-                            storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                if (passwords.equals(confirmpass)){
+                    mAuth.createUserWithEmailAndPassword(email.getText().toString(),passwords.getText().toString())
+                            .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
                                 @Override
-                                public void onSuccess(final UploadTask.TaskSnapshot taskSnapshot) {
+                                public void onComplete(@NonNull Task<AuthResult> task) {
 
-                                    taskSnapshot.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    final FirebaseUser userNew = mAuth.getCurrentUser();
+
+
+                                    UUID uuidImage = UUID.randomUUID();
+                                    String profilepicture = "profilepic/" + uuidImage +".png";
+                                    StorageReference storageReference = fbStorageRef.child(profilepicture);
+                                    storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                                         @Override
-                                        public void onSuccess(Uri uri) {
+                                        public void onSuccess(final UploadTask.TaskSnapshot taskSnapshot) {
 
-                                            String imageurl = uri.toString();
-                                            String fullname = name.getText().toString();
-                                            String mail = email.getText().toString();
-                                            String BanksIDs = piggyIDs.getText().toString();
+                                            taskSnapshot.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                @Override
+                                                public void onSuccess(Uri uri) {
+
+                                                    String imageurl = uri.toString();
+                                                    String fullname = name.getText().toString();
+                                                    String mail = email.getText().toString();
+                                                    String BanksIDs = piggyIDs.getText().toString();
 
 
-                                            String userUID = "user_" + userNew.getUid();
+                                                    String userUID = "user_" + userNew.getUid();
 
-                                            myRef.child("Customers").child(userUID).child("PiggyIDs").setValue(BanksIDs);
-                                            myRef.child("Customers").child(userUID).child("Fullname").setValue(fullname);
-                                            myRef.child("Customers").child(userUID).child("Email").setValue(mail);
-                                            myRef.child("Customers").child(userUID).child("PP").setValue(imageurl);
+                                                    myRef.child("Customers").child(userUID).child("PiggyIDs").setValue(BanksIDs);
+                                                    myRef.child("Customers").child(userUID).child("Fullname").setValue(fullname);
+                                                    myRef.child("Customers").child(userUID).child("Email").setValue(mail);
+                                                    myRef.child("Customers").child(userUID).child("PP").setValue(imageurl);
 
-                                            Fragment fragment = new LoginScreenFragment();
+                                                    Fragment fragment = new LoginScreenFragment();
 
-                                            FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.enter_left_to_right,R.anim.exit_to_right);
-                                            transaction.replace(R.id.signUp2Button,fragment);
-                                            transaction.commit();
+                                                    FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.enter_left_to_right,R.anim.exit_to_right);
+                                                    transaction.replace(R.id.signUp2Button,fragment);
+                                                    transaction.commit();
 
+
+
+                                                }
+                                            }).addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+
+                                                }
+                                            });
 
 
                                         }
-                                    }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
+                                    });
+
 
                                 }
-                            });
-
+                            }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
 
                         }
                     });
 
+                }else {
+                    Toast.makeText(requireContext(),"Both password fields must be identical",Toast.LENGTH_SHORT).show();
+                }
 
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
 
-                    }
-                });
+
 
                 }
 

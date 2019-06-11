@@ -13,5 +13,6 @@
     <string name="title_activity_sign_up2_fragment">SignUp2Fragment</string>
     <string name="title_activity_main_screen_fragment">MainScreenFragment</string>
     <string name="title_activity_transaction_fragment">TransactionFragment</string>
+    <string name="title_activity_login_record">LoginRecord</string>
 
 </resources>

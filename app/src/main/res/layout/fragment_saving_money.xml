@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/savingGoalFR"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context=".Fragments.SavingMoneyFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="308dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/raleway_bold"
+            android:paddingLeft="20dp"
+            android:text="Accumulation Title: "
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@+id/titless"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/titless"
+            android:layout_width="339dp"
+            android:layout_height="38dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:fontFamily="@font/raleway_extralight_italic"
+            android:hint="Example; Mother's Day"
+            android:paddingLeft="20dp"
+            android:textColor="@color/cast_expanded_controller_background_color"
+            android:textColorHint="@color/common_google_signin_btn_text_light_default"
+            android:textSize="18sp"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/frequencyView"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/frequencyView"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:fontFamily="@font/raleway_bold"
+            android:paddingLeft="20dp"
+            android:text="Accumulation Frequency:"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="163dp"
+            android:layout_height="174dp"
+            android:paddingLeft="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/amountview"
+            tools:layout_editor_absoluteX="0dp">
+
+            <RadioButton
+                android:id="@+id/week"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/colorPrimary"
+                android:checked="true"
+                android:fontFamily="@font/raleway_medium"
+                android:text="Weekly"
+                android:textColor="@color/cast_expanded_controller_background_color"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/colorPrimary"
+                android:fontFamily="@font/raleway_medium"
+                android:text="Monthly"
+                android:textColor="@color/cast_expanded_controller_background_color"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/colorPrimary"
+                android:fontFamily="@font/raleway_medium"
+                android:text="Yearly"
+                android:textColor="@color/cast_expanded_controller_background_color"
+                android:textSize="20sp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/amountview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_bold"
+            android:paddingLeft="20dp"
+            android:text="Current Accumulation Amount: "
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/timeView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/sumMoneySaving"
+                android:layout_width="269dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_weight="1"
+                android:fontFamily="@font/raleway_extrabold"
+                android:maxLength="5"
+                android:text="0.0"
+                android:textAlignment="textEnd"
+                android:textColor="@color/cast_expanded_controller_background_color"
+                android:textSize="65sp" />
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="144dp"
+                android:layout_height="66dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/raleway_extrabold"
+                android:gravity="bottom"
+                android:text="₺"
+                android:textAlignment="textStart"
+                android:textColor="@color/cast_expanded_controller_background_color"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/timeView"
+            android:layout_width="308dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/raleway_bold"
+            android:paddingLeft="20dp"
+            android:text="Accumulation Time: "
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/timessss"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/timessss"
+            android:layout_width="339dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:fontFamily="@font/raleway_extralight_italic"
+            android:hint="Example; 20"
+            android:paddingLeft="20dp"
+            android:textColor="@color/cast_expanded_controller_background_color"
+            android:textColorHint="@color/common_google_signin_btn_text_light_default"
+            android:textSize="18sp"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/textView10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="308dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_bold"
+            android:paddingLeft="20dp"
+            android:text="Accumulation Goal: "
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/goal"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/goal"
+            android:layout_width="339dp"
+            android:layout_height="46dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:fontFamily="@font/raleway_extralight_italic"
+            android:hint="Example; 1999.99"
+            android:paddingLeft="20dp"
+            android:textColor="@color/cast_expanded_controller_background_color"
+            android:textColorHint="@color/common_google_signin_btn_text_light_default"
+            android:textSize="18sp"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/calculatorrr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/calculatorrr"
+            android:layout_width="207dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/loginbutton"
+            android:fontFamily="@font/raleway_medium"
+            android:text="Calculate"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>
