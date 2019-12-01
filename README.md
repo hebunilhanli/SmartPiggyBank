@@ -1,4 +1,4 @@
-# SmartPiggyBank
+# Smart Piggy Bank
 
 Hi,
 
