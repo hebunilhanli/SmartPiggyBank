@@ -15,3 +15,4 @@ triggering servo motors and image processing. Firebase was used for data process
 
 NOTE: Firebase was used for data processing so, The file "google-services.json" was not added because the API key appears. Therefore, the application may not work correctly.
 
+https://www.youtube.com/embed/BnXh-V5gsAU
